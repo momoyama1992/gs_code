@@ -10,7 +10,7 @@ include("funcs.php");
 $pdo = db_conn();
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare("UPDATE gs_an_table SET name=:name,email=:email,naiyou=:naiyou WHERE id=:id");
+$stmt = $pdo->prepare("UPDATE gs_bm_table SET name=:name,email=:email,naiyou=:naiyou WHERE id=:id");
 $stmt->bindValue(':name',    $name,     PDO::PARAM_STR); 
 $stmt->bindValue(':email',   $email,    PDO::PARAM_STR); 
 $stmt->bindValue(':naiyou',  $naiyou,   PDO::PARAM_STR); 

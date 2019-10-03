@@ -3,7 +3,7 @@ include("funcs.php");
 $pdo = db_conn();
 
 //２．データ登録SQL作成
-$stmt = $pdo->prepare("SELECT * FROM gs_an_table");
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 $status = $stmt->execute();
 
 //３．データ表示
@@ -13,11 +13,11 @@ if($status==false) {
 }else{
   while( $r = $stmt->fetch(PDO::FETCH_ASSOC)){ 
     $view .= '<p>';
-    $view .= '<a href="detail.php?id='.$r["id"].'">';
-    $view .= $r["id"].'|'.$r["name"].'|'.$r["email"];
+    $view .= '<a href="bm_update_view.php?id='.$r["id"].'">';
+    $view .= $r["id"].'|'.$r["name"].'|'.$r["url"].'|'.$r["comme"];
     $view .= '</a>';
     $view .= "　";
-    $view .= '<a  class="btn btn-danger" href="delete.php?id='.$r["id"].'">';
+    $view .= '<a  class="btn btn-danger" href="bm_delete.php?id='.$r["id"].'">';
     $view .= '[削除]';
     $view .= '</a>';
     $view .= '</p>';

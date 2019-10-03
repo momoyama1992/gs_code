@@ -22,36 +22,35 @@ if($status==false){
 }
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>気になる漫画リスト</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>フリーアンケート表示</title>
+<link rel="stylesheet" href="css/range.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<style>div{padding: 10px;font-size:16px;}</style>
 </head>
 <body id="main">
-
 <!-- Head[Start] -->
 <header>
-    <nav class="navber navbar-default">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">登録</a>
-        </div>
-    </nav>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <a class="navbar-brand" href="index.php">ブクマ一覧</a>
+      </div>
+    </div>
+  </nav>
 </header>
 <!-- Head[End] -->
 
-<!-- Head[Start] -->
+<!-- Main[Start] -->
 <div>
     <div class="container jumbotron"><?=$view?></div>
 </div>
-<!-- Head[End] -->
+<!-- Main[End] -->
 
 </body>
 </html>
-
-
-
-
