@@ -6,7 +6,7 @@ session_start();
 $old_sessionid = session_id();
 
 //新しいセッションIDを発行（前のSESSION IDは無効）
-session_regenerate_id();
+session_regenerate_id(true);
 
 //新しいセッションIDを取得
 $new_sessionid = session_id();
@@ -14,6 +14,5 @@ $new_sessionid = session_id();
 //旧セッションIDと新セッションIDを表示
 echo "古いセッション: $old_sessionid<br />";
 echo "新しいセッション: $new_sessionid<br />";
-
 
 ?>

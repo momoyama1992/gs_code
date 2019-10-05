@@ -1,5 +1,18 @@
 <?php
+session_start();
+// function sschk(){
+//   if(
+//     !isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!= session_id() //「||」はORの意味
+//   ){
+//     exit("LOGIN ERROR");
+//   }else{
+//     session_regenerate_id(true);
+//     $_SESSION["chk_ssid"] = session_id();
+//   }
+// }
+
 include("funcs.php");
+sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
@@ -17,9 +30,11 @@ if($status==false) {
     $view .= $r["id"]."|".$r["name"]."|".$r["email"];
     $view .= '</a>';
     $view .= "　";
-    $view .= '<a class="btn btn-danger" href="delete.php?id='.$r["id"].'">';
-    $view .= '[<i class="glyphicon glyphicon-remove"></i>削除]';
-    $view .= '</a>';
+    if($_SESSION["kanri_flg"]=="1"){
+      $view .= '<a class="btn btn-danger" href="delete.php?id='.$r["id"].'">';
+      $view .= '[<i class="glyphicon glyphicon-remove"></i>削除]';
+      $view .= '</a>';
+    }
     $view .= '</p>';
   }
 }
@@ -44,6 +59,8 @@ if($status==false) {
     <div class="container-fluid">
       <div class="navbar-header">
       <a class="navbar-brand" href="index.php">データ登録</a>
+      <a class="navbar-brand" href="logout.php">LOGOUT</a>
+      <?=$_SESSION["name"]?>さん、こんにちは。
       </div>
     </div>
   </nav>

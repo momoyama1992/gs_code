@@ -1,6 +1,7 @@
 <?php
 $id = $_GET["id"]; //?id~**を受け取る
 include("funcs.php");
+sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成

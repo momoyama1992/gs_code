@@ -6,13 +6,14 @@ session_start();
 
 
 //1.  DB接続します
+$sql = "SELECT * FROM gs_user_table WHERE lid=:lid AND life_flg=0";
 include("funcs.php");
 $pdo = db_conn();
 
 //2. データ登録SQL作成
-$stmt = $pdo->prepare(******************);
-$stmt->bindValue(':lid', ********, PDO::PARAM_STR);
-$stmt->bindValue(':lpw', ********, PDO::PARAM_STR); //* Hash化する場合はコメントする
+$stmt = $pdo->prepare($sql);
+$stmt->bindValue(':lid', $_POST["lid"], PDO::PARAM_STR); //* Hash化する場合はコメントする
+// $stmt->bindValue(':lpw', $_POST["lpw"], PDO::PARAM_STR);
 $status = $stmt->execute();
 
 //3. SQL実行時にエラーがある場合STOP
@@ -26,15 +27,15 @@ $val = $stmt->fetch();         //1レコードだけ取得する方法
 
 //5. 該当レコードがあればSESSIONに値を代入
 //* if(password_verify($lpw, $val["lpw"])){
-if( $val["id"] != "" ){
+if( password_verify($_POST["lpw"],$val["lpw"])){
   //Login成功時
   $_SESSION["chk_ssid"]  = session_id();
   $_SESSION["kanri_flg"] = $val['kanri_flg'];
   $_SESSION["name"]      = $val['name'];
-  header(**********************);
+  redirect("select.php");
 }else{
   //Login失敗時(Logout経由)
-  header(**********************);
+  redirect("login.php");
 }
 
 exit();

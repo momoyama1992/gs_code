@@ -31,3 +31,15 @@ function redirect($file_name){
     header("Location: ".$file_name);
     exit();
 }
+
+// SessionCheck
+function sschk(){
+  if(
+    !isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!= session_id() //「||」はORの意味
+  ){
+    exit("LOGIN ERROR");
+  }else{
+    session_regenerate_id(true);
+    $_SESSION["chk_ssid"] = session_id();
+  }
+}
