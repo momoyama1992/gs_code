@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+// function化する！→funcs.php
 // function sschk(){
 //   if(
 //     !isset($_SESSION["chk_ssid"]) || $_SESSION["chk_ssid"]!= session_id() //「||」はORの意味
@@ -12,7 +14,7 @@ session_start();
 // }
 
 include("funcs.php");
-sschk();
+// sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成

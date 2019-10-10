@@ -4,7 +4,6 @@ session_start();
 
 //POST値
 
-
 //1.  DB接続します
 $sql = "SELECT * FROM gs_user_table WHERE lid=:lid AND life_flg=0";
 include("funcs.php");
@@ -32,12 +31,10 @@ if( password_verify($_POST["lpw"],$val["lpw"])){
   $_SESSION["chk_ssid"]  = session_id();
   $_SESSION["kanri_flg"] = $val['kanri_flg'];
   $_SESSION["name"]      = $val['name'];
-  redirect("select.php");
+  redirect("bm_list_view.php");
 }else{
   //Login失敗時(Logout経由)
-  redirect("login.php");
+  redirect("bm_login.php");
 }
 
 exit();
-
-

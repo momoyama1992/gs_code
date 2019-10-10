@@ -7,13 +7,8 @@ function h($str){
 //DB接続
 function db_conn(){
   try {
-
     //MAMP
-    return new PDO('mysql:dbname=gs_db4;charset=utf8;host=localhost','root','root');
-    
-    //XAMP
-    //return new PDO('mysql:dbname=gs_db4;charset=utf8;host=localhost','root','');
-
+    return new PDO('mysql:dbname=comic_db;charset=utf8;host=localhost','root','root');
   } catch (PDOException $e) {
     exit('DB Connection Error:'.$e->getMessage());
   }
