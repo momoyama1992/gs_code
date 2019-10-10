@@ -3,7 +3,7 @@
 $id = $_GET["id"];
 
 include("funcs.php");
-// sschk();
+sschk();
 $pdo = db_conn();
 
 $stmt = $pdo->prepare("DELETE FROM gs_bm_table WHERE id=:id");

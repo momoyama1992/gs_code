@@ -14,7 +14,7 @@ session_start();
 // }
 
 include("funcs.php");
-// sschk();
+sschk();
 $pdo = db_conn();
 
 //２．データ登録SQL作成
