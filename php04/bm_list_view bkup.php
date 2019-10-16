@@ -14,8 +14,8 @@ if($status==false){
 }else{
   while( $r = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= '<p>';
-    $view .= '<a href="bm_pre_update_view.php?id='.$r["id"].'">';
-    $view .= $r["id"]."|".$r["name"]."|".$r["indate"];
+    $view .= '<a href="bm_update_view.php?id='.$r["id"].'">';
+    $view .= $r["id"]."|".$r["name"]."|".$r["url"]."|".$r["comme"];
     $view .= '</a>';
     $view .= " ";
     if($_SESSION["kanri_flg"]=="1"){

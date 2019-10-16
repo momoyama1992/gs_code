@@ -21,9 +21,9 @@ if($status==false) {
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>ブクマ更新</title>
+  <title>ブクマ詳細</title>
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <style>div{padding:10px;font-size:16px;}</style>
+  <style>div{padding: 10px;font-size:16px;}</style>
 </head>
 <body>
 
@@ -38,20 +38,21 @@ if($status==false) {
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<form method="POST" action="bm_update.php">
+<!-- <form method="POST" action="bm_update.php"> -->
   <div class="jumbotron">
    <fieldset>
-    <legend>［編集］</legend>
-     <label>タイトル：<input type="text" name="name" value="<?=$row["name"]?>"></label><br>
-     <label>URL：<input type="text" name="url" value="<?=$row["url"]?>"></label><br>
-     <label><textArea name="comme" rows="4" cols="40"><?=$row["comme"]?></textArea></label><br>
-     <input type="submit" value="[送信]"> 
-     <!-- class="btn btn-primary" -->
+    <legend>［詳細］</legend>
+     <label>タイトル：<?=$row["name"]?></label><br>
+     <label>URL：<?=$row["url"]?></label><br>
+     <label>あらすじ：<?=$row["comme"]?></label><br>
+     <!-- <label><textArea name="comme" rows="4" cols="40"><?=$row["comme"]?></textArea></label><br> -->
+     <!-- <input type="submit" value="送信"> -->
+     <a class="btn btn-success" href="bm_list_view.php">[一覧へ戻る]</a>
+     <a class="btn btn-danger" href="bm_update_view.php">[編集]</a>
      <input type="hidden" name="id" value="<?=$id?>" >
-     <!-- <a class="btn btn-danger" href="bm_list_view.php">[キャンセル]</a> -->
     </fieldset>
   </div>
-</form>
+<!-- </form> -->
 <!-- Main[End] -->
 
 
