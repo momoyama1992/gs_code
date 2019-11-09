@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 $name   = $_POST["name"];
 $url    = $_POST["url"];
@@ -20,3 +21,5 @@ if($status==false){
 }else{
     redirect("bm_list_view.php");
 }
+
+?>

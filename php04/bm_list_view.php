@@ -41,7 +41,8 @@ if($status==false){
 </head>
 <body id="main">
 <!-- Head[Start] -->
-<header>
+<?php include("menu.php"); ?>
+<!-- <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -51,7 +52,7 @@ if($status==false){
       </div>
     </div>
   </nav>
-</header>
+</header> -->
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
